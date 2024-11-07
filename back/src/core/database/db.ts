@@ -13,7 +13,8 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_DATABASE || "dana_conection",
 
     // migrations: [Users1730985310352],
-    migrations: [Roles1730985320031],
+    migrations: [Roles1730985320031, ],
+
 
     
     synchronize: false,
