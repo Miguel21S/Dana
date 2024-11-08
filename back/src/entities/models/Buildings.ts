@@ -21,12 +21,12 @@ export class Building extends BaseEntity {
     @Column({ "name": "province" })
     province!: string;
 
-    @Column({ "name": "quantity_apartment" })
-    quantityApartments!: number;
+    @Column({ "name": "quantity_apartment"})
+    quantity_apartment!: number;
 
     @Column({ "name": "floor_number" })
-    floorNumber!: number;
+    floor_number!: number;
 
     @Column({ "name": "build_type" })
-    buildType!: string;
+    build_type!: string;
 }

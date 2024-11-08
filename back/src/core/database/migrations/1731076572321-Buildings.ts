@@ -46,7 +46,7 @@ export class Buildings1731076572321 implements MigrationInterface {
                     },
                     {
                         name: "quantity_apartment",
-                        type: "in",
+                        type: "int",
                         length: "20",
                         isNullable: true
                     },

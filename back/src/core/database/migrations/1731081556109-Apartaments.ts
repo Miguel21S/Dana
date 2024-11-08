@@ -21,7 +21,7 @@ export class Apartaments1731081556109 implements MigrationInterface {
                         isNullable: false
                     },
                     {
-                        name: "floor",
+                        name: "number_floor",
                         type: "int",
                         length: "50",
                         isNullable: false
