@@ -21,6 +21,12 @@ export class Buildings1731076572321 implements MigrationInterface {
                         isNullable: false
                     },
                     {
+                        name: "number_build",
+                        type: "int",
+                        length: "10",
+                        isNullable: false
+                    },
+                    {
                         name: "postal_code",
                         type: "varchar",
                         length: "10",
@@ -39,16 +45,22 @@ export class Buildings1731076572321 implements MigrationInterface {
                         isNullable: false
                     },
                     {
-                        name: "build_type",
-                        type: "varchar",
-                        length: "50",
+                        name: "quantity_apartment",
+                        type: "in",
+                        length: "20",
                         isNullable: true
                     },
                     {
                         name: "floor_number",
                         type: "int",
                         isNullable: true
-                    }
+                    },
+                    {
+                        name: "build_type",
+                        type: "varchar",
+                        length: "50",
+                        isNullable: true
+                    },
                 ]
             }),
             true
