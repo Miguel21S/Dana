@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Apartments } from "./Apartments";
 
 @Entity("buildings")
 export class Building extends BaseEntity {
@@ -21,7 +22,7 @@ export class Building extends BaseEntity {
     @Column({ "name": "province" })
     province!: string;
 
-    @Column({ "name": "quantity_apartment"})
+    @Column({ "name": "quantity_apartment" })
     quantity_apartment!: number;
 
     @Column({ "name": "floor_number" })
@@ -29,4 +30,8 @@ export class Building extends BaseEntity {
 
     @Column({ "name": "build_type" })
     build_type!: string;
+
+    @OneToMany(() => Apartments, (apartment) => apartment.building)
+    apartments!: Apartments[];
+
 }

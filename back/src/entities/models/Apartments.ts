@@ -1,21 +1,23 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
+import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Building } from "./Buildings";
 
 @Entity("apartments")
-export class APartments extends BaseEntity {
-
+export class Apartments {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column({ "name": "apartament_number"})
-    apartamentNumber!: number;
+    @Column()
+    apartment_number!: number;
 
-    @Column({ "name": "number_floor"})
+    @Column()
     number_floor!: number;
 
-    @Column({ "name": "area_m2"})
-    area_m2!: number;
+    @Column({ nullable: true })
+    area_m2?: string;
 
-    @Column({"name": "condition"})
-    condition!: string;
+    @Column({ nullable: true })
+    condition?: string;
+
+    @ManyToOne(() => Building, (building) => building.apartments)
+    building!: Building;
 }

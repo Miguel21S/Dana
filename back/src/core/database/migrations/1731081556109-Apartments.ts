@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Apartaments1731081556109 implements MigrationInterface {
+export class Apartments1731081556109 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
@@ -17,15 +17,12 @@ export class Apartaments1731081556109 implements MigrationInterface {
                     {
                         name: "apartament_number",
                         type: "int",
-                        length: "50",
                         isNullable: false
                     },
                     {
                         name: "number_floor",
                         type: "int",
-                        length: "50",
                         isNullable: false
-
                     },
                     {
                         name: "area_m2",
@@ -53,7 +50,7 @@ export class Apartaments1731081556109 implements MigrationInterface {
                         onDelete: "CASCADE"
                     }
                 ]
-            }),
+            }),            
             true
         )
     }
