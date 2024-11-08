@@ -10,7 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "migration:run": "typeorm-ts-node-commonjs migration:run -d ./src/core/database/db.ts",
     "migration:create": "typeorm-ts-node-commonjs migration:create -n",
-    "migration:revert": "typeorm-ts-node-commonjs migration:revert -d ./src/core/database/db.ts"
+    "migration:revert": "typeorm-ts-node-commonjs migration:revert -d ./src/core/database/db.ts",
+    "npx-create-table": "typeorm migration:create ./src/database/migrations/nombre de la tabla"
+
   },
   "keywords": [],
   "author": "",
