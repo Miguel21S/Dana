@@ -1,59 +1,45 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Damages1731019274916 implements MigrationInterface {
+export class ResponsibleApartments1731025233480 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-
         await queryRunner.createTable(
             new Table({
-                name: "damages",
+                name: "responsible_apartments",
                 columns: [
                     {
                         name: "id",
                         type: "int",
                         isPrimary: true,
                         unsigned: true,
-                        generationStrategy: "increment",
+                        generationStrategy: "increment"
                     },
                     {
-                        name: "type_damage",
-                        type: "varchar",
-                        length: "255",
+                        name: "date",
+                        type: "date",
                         isNullable: true
                     },
                     {
-                        name: "description",
-                        type: "varchar",
-                        length: "255",
-                        isNullable: true
-                    },
-                    {
-                        name: "severity",
-                        type: "varchar",
-                        length: "255",
-                        isNullable: true
-                    },
-                    {
-                        name: "apartaments_id",
+                        name: "users_id",
                         type: "int",
                         isNullable: false,
                     },
                     {
-                        name: "home_property_id",
+                        name: "apartment_id",
                         type: "int",
                         isNullable: false,
-                    }
+                    },
                 ],
                 foreignKeys: [
                     {
-                        columnNames: ["apartaments_id"],
-                        referencedTableName: "apartaments",
+                        columnNames: ["users_id"],
+                        referencedTableName: "users",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     },
                     {
-                        columnNames: ["home_property_id"],
-                        referencedTableName: "home_property",
+                        columnNames: ["apartment_id"],
+                        referencedTableName: "apartment",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     }
@@ -64,7 +50,7 @@ export class Damages1731019274916 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("damages");
+        await queryRunner.dropTable("responsible_apartments");
     }
 
 }
