@@ -1,6 +1,6 @@
 import express, { Application } from 'express';
 import 'dotenv/config';
-import { AppDataSource } from './core/database/migrations/db';
+import { AppDataSource } from './core/database/db';
 
 const app: Application = express();
 const PORT =process.env.PORT || 3001;
