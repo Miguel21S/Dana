@@ -11,7 +11,7 @@ export class ResponsibleApartments1731025233480 implements MigrationInterface {
                         name: "id",
                         type: "int",
                         isPrimary: true,
-                        unsigned: true,
+                        isGenerated: true,
                         generationStrategy: "increment"
                     },
                     {

@@ -11,7 +11,7 @@ export class Apartments1731019097521 implements MigrationInterface {
                         name: "id",
                         type: "int",
                         isPrimary: true,
-                        unsigned: true,
+                        isGenerated: true,
                         generationStrategy: "increment"
                     },
                     {

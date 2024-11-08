@@ -11,7 +11,7 @@ export class Relocation1731019339171 implements MigrationInterface {
                         name: "id",
                         type: "int",
                         isPrimary: true,
-                        unsigned: true,
+                        isGenerated: true,
                         generationStrategy: "increment"
                     },
                     {

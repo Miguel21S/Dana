@@ -11,7 +11,7 @@ export class HelpReceived1731019295116 implements MigrationInterface {
                     name: "id",
                     type: "int",
                     isPrimary: true,
-                    unsigned: true,
+                    isGenerated: true,
                     generationStrategy: "increment"
                 },
                 {

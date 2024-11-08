@@ -11,7 +11,7 @@ export class Cars1731019245531 implements MigrationInterface {
                         name: "id",
                         type: "int",
                         isPrimary: true,
-                        unsigned: true,
+                        isGenerated: true,
                         generationStrategy: "increment"
                     },
                     {

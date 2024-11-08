@@ -11,7 +11,7 @@ export class HomeProperty1731019223928 implements MigrationInterface {
                         name: "id",
                         type: "int",
                         isPrimary: true,
-                        unsigned: true,
+                        isGenerated: true,
                         generationStrategy: "increment",
                     },
                     {

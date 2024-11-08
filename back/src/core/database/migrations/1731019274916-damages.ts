@@ -12,7 +12,7 @@ export class Damages1731019274916 implements MigrationInterface {
                         name: "id",
                         type: "int",
                         isPrimary: true,
-                        unsigned: true,
+                        isGenerated: true,
                         generationStrategy: "increment",
                     },
                     {

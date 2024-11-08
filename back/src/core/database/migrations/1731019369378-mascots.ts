@@ -11,7 +11,7 @@ export class Mascots1731019369378 implements MigrationInterface {
                     name: "id",
                     type: "int",
                     isPrimary: true,
-                    unsigned: true,
+                    isGenerated: true,
                     generationStrategy: "increment"
                 },
                 {

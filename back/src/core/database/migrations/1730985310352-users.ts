@@ -41,18 +41,20 @@ export class Users1730985310352 implements MigrationInterface {
                     {
                         name: "phone",
                         type: "varchar",
-                        length: "50"
+                        length: "50",
+                        isNullable: true
                     },
                     {
                         name: "email",
                         type: "varchar",
                         length: "255",
-                        isNullable: false
+                        isNullable: true
                     },
                     {
                         name: "special_situation",
                         type: "varchar",
-                        length: "255"
+                        length: "255",
+                        isNullable: true
                     },
                     {
                         name: "date_entry_apartment",
@@ -65,7 +67,7 @@ export class Users1730985310352 implements MigrationInterface {
                         length: "255",
                         isNullable: false
                     },
-                    {
+                    /* {
                         name: "role_id",
                         type: "int",
                         isNullable: false
@@ -74,22 +76,22 @@ export class Users1730985310352 implements MigrationInterface {
                         name: "apartment_id",
                         type: "int",
                         isNullable: true
-                    }
+                    } */
                 ],
-                foreignKeys: [
+                /* foreignKeys: [
                     {
                         columnNames: ["role_id"],
                         referencedTableName: "roles",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     },
-                    {
+                     {
                         columnNames: ["apartment_id"],
                         referencedTableName: "apartments",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
-                    }
-                ]
+                    } 
+                ] */
             }),
             true
         );
