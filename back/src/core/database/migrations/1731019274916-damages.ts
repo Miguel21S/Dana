@@ -33,7 +33,7 @@ export class Damages1731019274916 implements MigrationInterface {
                         length: "255",
                         isNullable: true
                     },
-                    {
+                  /*   {
                         name: "apartaments_id",
                         type: "int",
                         isNullable: false,
@@ -42,9 +42,9 @@ export class Damages1731019274916 implements MigrationInterface {
                         name: "home_property_id",
                         type: "int",
                         isNullable: false,
-                    }
+                    } */
                 ],
-                foreignKeys: [
+                /* foreignKeys: [
                     {
                         columnNames: ["apartaments_id"],
                         referencedTableName: "apartaments",
@@ -57,7 +57,7 @@ export class Damages1731019274916 implements MigrationInterface {
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     }
-                ]
+                ] */
             }),
             true
         )

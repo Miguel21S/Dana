@@ -43,20 +43,20 @@ export class Mascots1731019369378 implements MigrationInterface {
                     length: "50",
                     isNullable: false
                 },
-                {
+                /* {
                     name: "users_id",
                     type: "int",
                     isNullable: false,
-                }
+                } */
             ],
-            foreignKeys: [
+           /*  foreignKeys: [
                 {
                     columnNames: ["users_id"],
                     referencedTableName: "users",
                     referencedColumnNames: ["id"],
                     onDelete: "CASCADE"
                 }
-            ]
+            ] */
            }),
            true
         )

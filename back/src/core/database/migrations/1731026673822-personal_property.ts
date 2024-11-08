@@ -32,20 +32,20 @@ export class PersonalProperty1731026673822 implements MigrationInterface {
                         length: "255",
                         isNullable: true,
                     },
-                    {
+                    /* {
                         name: "user_id",
                         type: "int",
                         isNullable: false,
-                    }
+                    } */
                 ],
-                foreignKeys: [
+                /* foreignKeys: [
                     {
                         columnNames: ["user_id"],
                         referencedTableName: "user",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     }
-                ]
+                ] */
             }),
             true
         );

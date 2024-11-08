@@ -32,20 +32,20 @@ export class HomeProperty1731019223928 implements MigrationInterface {
                         length: "255",
                         isNullable: true
                     },
-                    {
+                    /* {
                         name: "apartaments_id",
                         type: "int",
                         isNullable: false,
-                    }
+                    } */
                 ],
-                foreignKeys: [
+                /* foreignKeys: [
                     {
                         columnNames: ["apartaments_id"],
                         referencedTableName: "apartaments",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE",
                     }
-                ]
+                ] */
             })
         )
     }

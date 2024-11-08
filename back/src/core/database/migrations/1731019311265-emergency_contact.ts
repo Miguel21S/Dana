@@ -38,20 +38,20 @@ name: "emergency_contact",
                         length: "255",
                         isNullable: true
                     },
-                    {
+                   /*  {
                         name: "users_id",
                         type: "int",
                         isNullable: false,
-                    }
+                    } */
                 ],
-                foreignKeys: [
+                /* foreignKeys: [
                     {
                         columnNames: ["users_id"],
                         referencedTableName: "users",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     }
-                ]
+                ] */
             }),
             true
         )

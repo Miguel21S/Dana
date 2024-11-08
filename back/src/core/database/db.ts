@@ -24,7 +24,11 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASSWORD || "3311",
     database: process.env.DB_DATABASE || "dana_conection",
 
-    migrations: [Roles1730985320031, Users1730985310352 ],
+    migrations: [Roles1730985320031, Buildings1731019074414, Users1730985310352, Apartments1731019097521,
+        Diseases1731019122672, Cars1731019245531, Damages1731019274916, HelpReceived1731019295116,
+        HomeProperty1731019223928, EmergencyContact1731019311265, Relocation1731019339171,
+        Mascots1731019369378, ResponsibleApartments1731025233480, PersonalProperty1731026673822
+    ],
 
     synchronize: false,
     logging: false,

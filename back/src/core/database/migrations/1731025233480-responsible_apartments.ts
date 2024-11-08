@@ -19,7 +19,7 @@ export class ResponsibleApartments1731025233480 implements MigrationInterface {
                         type: "date",
                         isNullable: true
                     },
-                    {
+                   /*  {
                         name: "users_id",
                         type: "int",
                         isNullable: false,
@@ -28,9 +28,9 @@ export class ResponsibleApartments1731025233480 implements MigrationInterface {
                         name: "apartment_id",
                         type: "int",
                         isNullable: false,
-                    },
+                    }, */
                 ],
-                foreignKeys: [
+               /*  foreignKeys: [
                     {
                         columnNames: ["users_id"],
                         referencedTableName: "users",
@@ -43,7 +43,7 @@ export class ResponsibleApartments1731025233480 implements MigrationInterface {
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     }
-                ]
+                ] */
             }),
             true
         )

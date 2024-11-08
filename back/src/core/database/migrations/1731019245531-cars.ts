@@ -55,20 +55,20 @@ export class Cars1731019245531 implements MigrationInterface {
                         length: "50",
                         isNullable: true
                     },
-                    {
+                  /*   {
                         name: "users_id",
                         type: "int",
                         isNullable: false
-                    }
+                    } */
                 ],
-                foreignKeys: [
+               /*  foreignKeys: [
                     {
                         columnNames: ["users_id"],
                         referencedTableName: "users",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     }
-                ]
+                ] */
             }),
             true
         )

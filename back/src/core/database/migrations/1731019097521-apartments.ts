@@ -39,20 +39,20 @@ export class Apartments1731019097521 implements MigrationInterface {
                         length: "1000",
                         isNullable: true
                     },
-                    {
+                    /* {
                         name: "building_id",
                         type: "int",
                         isNullable: false,
-                    }
+                    } */
                 ],
-                foreignKeys: [
+                /* foreignKeys: [
                     {
                         columnNames: ["building_id"],
                         referencedTableName: "buildings",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     }
-                ]
+                ] */
             }),
             true
         )

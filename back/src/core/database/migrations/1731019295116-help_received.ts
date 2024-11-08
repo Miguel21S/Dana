@@ -31,21 +31,21 @@ export class HelpReceived1731019295116 implements MigrationInterface {
                     length: "255",
                     isNullable: true
                 },
-                {
+              /*   {
                     name: "mount",
                     type: "decimal",
                     length: "10",
                     isNullable: true
-                }
+                } */
             ],
-            foreignKeys: [
+           /*  foreignKeys: [
                 {
                     columnNames: ["users_id"],
                     referencedTableName: "users",
                     referencedColumnNames: ["id"],
                     onDelete: "CASCADE"
                 }
-            ]
+            ] */
            }),
            true
         )
