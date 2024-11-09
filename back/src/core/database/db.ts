@@ -23,6 +23,8 @@ import { HelpReceived } from '../../entities/models/HelpReceived';
 import { HelpRceived1731151727574 } from './migrations/1731151727574-HelpRceived';
 import { EmergencyContact } from '../../entities/models/EmergencyContact';
 import { EmergencyContact1731155369609 } from './migrations/1731155369609-EmergencyContact';
+import { Relocation } from '../../entities/models/Relocation';
+import { Relocation1731156274553 } from './migrations/1731156274553-Relocation';
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -32,11 +34,11 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASSWORD || "3311",
     database: process.env.DB_DATABASE || "dana_conection",
 
-    entities: [Role, User, Building, Disease, Apartments, UsersDiseases, HomeProperty, PersonalProperty, Cars, HelpReceived, EmergencyContact],
+    entities: [Role, User, Building, Disease, Apartments, UsersDiseases, HomeProperty, PersonalProperty, Cars, HelpReceived, EmergencyContact, Relocation],
     migrations: [Roles1731071614439, Users1731072300312, Buildings1731076572321,
         Diseases1731076649622, Apartments1731081556109, UserDiseases1731110105403,
         HomeProperty1731112433694, PersonalProperty1731113876694, Cars1731115048710,
-        HelpRceived1731151727574, EmergencyContact1731155369609
+        HelpRceived1731151727574, EmergencyContact1731155369609, Relocation1731156274553
     ],
 
     synchronize: false,

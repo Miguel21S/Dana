@@ -5,6 +5,7 @@ import { PersonalProperty } from "./PersonalProperty";
 import { Cars } from "./Cars";
 import { HelpReceived } from "./HelpReceived";
 import { EmergencyContact } from "./EmergencyContact";
+import { Relocation } from "./Relocation";
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -49,8 +50,11 @@ export class User extends BaseEntity {
     @OneToMany(() => Cars, (cars) => cars.user_id)
     cars!: Cars[];
 
-    @OneToMany(() => EmergencyContact, (emergencyContact) => emergencyContact.usee_id)
+    @OneToMany(() => EmergencyContact, (emergencyContact) => emergencyContact.user_id)
     emergencyContact!: EmergencyContact[];
+
+    @OneToMany(() => Relocation, (location) => location.user_id)
+    relocation!: Relocation[];
 
     @ManyToOne(() => Role, (role) => role.users)
     @JoinColumn({'name': 'role_id'})

@@ -19,8 +19,8 @@ export class EmergencyContact extends BaseEntity{
     @Column({"name": "relationship"})
     relationship!: string;
 
-    @Column({"name": "usee_id"})
-    usee_id!: number;
+    @Column({"name": "user_id"})
+    user_id!: number;
 
     @ManyToMany(() => User, (user) => user.emergencyContact)
     @JoinColumn({"name": "user_id"})
