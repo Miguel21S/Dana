@@ -2,6 +2,7 @@ import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGe
 import { Role } from "./Role";
 import { UsersDiseases } from "./UsersDiseases";
 import { PersonalProperty } from "./PersonalProperty";
+import { Cars } from "./Cars";
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -38,6 +39,9 @@ export class User extends BaseEntity {
 
     @OneToMany(() => PersonalProperty, (personalProperty) => personalProperty.user_id)
     personalProperty!: PersonalProperty[];
+
+    @OneToMany(() => Cars, (cars) => cars.user_id)
+    cars!: Cars[];
 
     @ManyToOne(() => Role, (role) => role.users)
     @JoinColumn({'name': 'role_id'})
