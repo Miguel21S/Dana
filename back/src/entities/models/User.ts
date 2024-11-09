@@ -7,6 +7,7 @@ import { HelpReceived } from "./HelpReceived";
 import { EmergencyContact } from "./EmergencyContact";
 import { Relocation } from "./Relocation";
 import { Mascots } from "./Mascots";
+import { ResponsibleApartments } from "./ResponsibleApartments";
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -59,6 +60,9 @@ export class User extends BaseEntity {
 
     @OneToMany(() => Mascots, (mascots) => mascots.user_id)
     mascots!: Mascots[];
+
+    @OneToMany(() => ResponsibleApartments, (reponsibleApartments) => reponsibleApartments.user_id)
+    responsibleApartments!: ResponsibleApartments[];
 
     @ManyToOne(() => Role, (role) => role.users)
     @JoinColumn({'name': 'role_id'})

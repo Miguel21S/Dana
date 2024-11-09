@@ -7,22 +7,22 @@ export class Mascots extends BaseEntity{
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column("varchar", { "name": "name" })
+    @Column({ "name": "name" })
     name!: string;
 
-    @Column("varchar", { "name": "species" })
+    @Column({ "name": "species" })
     species!: string;
 
-    @Column("varchar", { "name": "race" })
+    @Column({ "name": "race" })
     race!: string;
 
-    @Column("varchar", { "name": "age" })
+    @Column({ "name": "age" })
     age!: number;
 
-    @Column("varchar", { "name": "condition" })
+    @Column({ "name": "condition" })
     condition!: string;
 
-    @Column("varchar", { "name": "user_id" })
+    @Column({ "name": "user_id" })
     user_id!: number;
 
     @ManyToOne(() => User, (user) => user.mascots)

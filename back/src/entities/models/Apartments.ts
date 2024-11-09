@@ -2,6 +2,7 @@ import { Entity, Column, ManyToOne, PrimaryGeneratedColumn, JoinColumn, OneToMan
 import { Building } from "./Buildings";
 import { HomeProperty } from "./HomeProperty";
 import { HelpReceived } from "./HelpReceived";
+import { ResponsibleApartments } from "./ResponsibleApartments";
 
 @Entity("apartments")
 export class Apartments {
@@ -28,4 +29,7 @@ export class Apartments {
 
     @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.apartment_id)
     helpReceived!: HelpReceived[];
+
+    @OneToMany(() => ResponsibleApartments, (responsibleApartments) => responsibleApartments.apartment_id)
+    responsibleApartments!: ResponsibleApartments[];
 }
