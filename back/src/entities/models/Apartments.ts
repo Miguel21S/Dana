@@ -1,5 +1,6 @@
-import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, ManyToOne, PrimaryGeneratedColumn, JoinColumn, OneToMany } from "typeorm";
 import { Building } from "./Buildings";
+import { HomeProperty } from "./HomeProperty";
 
 @Entity("apartments")
 export class Apartments {
@@ -20,4 +21,7 @@ export class Apartments {
 
     @ManyToOne(() => Building, (building) => building.apartments)
     building!: Building;
+
+    @OneToMany(() => HomeProperty, (homeproperty) => homeproperty.apartment_id)
+    homeproperties!: HomeProperty[];
 }
