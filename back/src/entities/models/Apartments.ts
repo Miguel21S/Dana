@@ -1,6 +1,7 @@
 import { Entity, Column, ManyToOne, PrimaryGeneratedColumn, JoinColumn, OneToMany } from "typeorm";
 import { Building } from "./Buildings";
 import { HomeProperty } from "./HomeProperty";
+import { HelpReceived } from "./HelpReceived";
 
 @Entity("apartments")
 export class Apartments {
@@ -24,4 +25,7 @@ export class Apartments {
 
     @OneToMany(() => HomeProperty, (homeproperty) => homeproperty.apartment_id)
     homeproperties!: HomeProperty[];
+
+    @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.apartment_id)
+    helpReceived!: HelpReceived[];
 }

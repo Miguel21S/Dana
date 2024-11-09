@@ -3,6 +3,7 @@ import { Role } from "./Role";
 import { UsersDiseases } from "./UsersDiseases";
 import { PersonalProperty } from "./PersonalProperty";
 import { Cars } from "./Cars";
+import { HelpReceived } from "./HelpReceived";
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -39,6 +40,10 @@ export class User extends BaseEntity {
 
     @OneToMany(() => PersonalProperty, (personalProperty) => personalProperty.user_id)
     personalProperty!: PersonalProperty[];
+
+    
+    @OneToMany(()=> HelpReceived, (helpReceived) => helpReceived.user_id)
+    helpReceived!: HelpReceived[];
 
     @OneToMany(() => Cars, (cars) => cars.user_id)
     cars!: Cars[];
