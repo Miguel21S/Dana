@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { UsersDiseases } from "./UsersDiseases";
 
 @Entity("diseases")
 export class Disease extends BaseEntity{
@@ -11,4 +12,7 @@ export class Disease extends BaseEntity{
 
     @Column({ "name": "description"})
     description!: string;
+
+    @OneToMany(() => UsersDiseases, (usersDiseases) => usersDiseases.disease_id)
+    usersDiseases!: UsersDiseases[];
 }
