@@ -6,6 +6,7 @@ import { Cars } from "./Cars";
 import { HelpReceived } from "./HelpReceived";
 import { EmergencyContact } from "./EmergencyContact";
 import { Relocation } from "./Relocation";
+import { Mascots } from "./Mascots";
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -55,6 +56,9 @@ export class User extends BaseEntity {
 
     @OneToMany(() => Relocation, (location) => location.user_id)
     relocation!: Relocation[];
+
+    @OneToMany(() => Mascots, (mascots) => mascots.user_id)
+    mascots!: Mascots[];
 
     @ManyToOne(() => Role, (role) => role.users)
     @JoinColumn({'name': 'role_id'})
