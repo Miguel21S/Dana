@@ -3,6 +3,8 @@ import { Building } from "./Buildings";
 import { HomeProperty } from "./HomeProperty";
 import { HelpReceived } from "./HelpReceived";
 import { ResponsibleApartments } from "./ResponsibleApartments";
+import { Damages } from "./damages";
+
 
 @Entity("apartments")
 export class Apartments {
@@ -32,4 +34,7 @@ export class Apartments {
 
     @OneToMany(() => ResponsibleApartments, (responsibleApartments) => responsibleApartments.apartment_id)
     responsibleApartments!: ResponsibleApartments[];
+
+    @OneToMany(() => Damages, (damage) => damage.apartment_id)
+    damages!: Damages[];
 }
