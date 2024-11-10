@@ -1,16 +1,17 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Role } from "./Role";
+
 import { UsersDiseases } from "./UsersDiseases";
 import { PersonalProperty } from "./PersonalProperty";
-import { Cars } from "./Cars";
 import { HelpReceived } from "./HelpReceived";
+import { Cars } from "./Cars";
 import { EmergencyContact } from "./EmergencyContact";
 import { Relocation } from "./Relocation";
 import { Mascots } from "./Mascots";
-import { ResponsibleApartments } from "./ResponsibleApartments";
+import { Roles } from "./Roles";
+import { UserApartments } from "./UserApartments";
 
 @Entity('users')
-export class User extends BaseEntity {
+export class Users extends BaseEntity {
     
     @PrimaryGeneratedColumn()
     id!: number;
@@ -61,10 +62,10 @@ export class User extends BaseEntity {
     @OneToMany(() => Mascots, (mascots) => mascots.user_id)
     mascots!: Mascots[];
 
-    @OneToMany(() => ResponsibleApartments, (reponsibleApartments) => reponsibleApartments.user_id)
-    responsibleApartments!: ResponsibleApartments[];
-
-    @ManyToOne(() => Role, (role) => role.users)
+    @OneToMany(() => UserApartments, (userApartments) => userApartments.user_id)
+    userApartments!: UserApartments[];
+ 
+    @ManyToOne(() => Roles, (role) => role.users)
     @JoinColumn({'name': 'role_id'})
-    role!: Role;
+    role!: Roles;
 }

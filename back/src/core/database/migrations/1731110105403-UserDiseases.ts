@@ -44,7 +44,7 @@ export class UserDiseases1731110105403 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("user_diseases");
+        await queryRunner.dropTable("userdiseases");
     }
 
 }

@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./User";
+import { Users } from "./Users";
 import { Disease } from "./Diseases";
 
 @Entity("usersDiseases")
@@ -14,9 +14,9 @@ export class UsersDiseases extends BaseEntity{
     @Column({ "name": "disease_id" })
     disease_id!: number;
 
-    @ManyToMany(() => User, (user) => user.usersDiseases)
+    @ManyToMany(() => Users, (user) => user.usersDiseases)
     @JoinColumn({"name": "user_id"})
-    user!: User;
+    user!: Users;
 
     @ManyToMany(() => Disease, (disease) => disease.usersDiseases)
     @JoinColumn({"name": "disease_id"})

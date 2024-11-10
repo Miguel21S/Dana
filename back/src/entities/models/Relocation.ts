@@ -1,5 +1,6 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./User";
+import { Users } from "./Users";
+import { Apartments } from "./Apartments";
 
 @Entity("relocation")
 export class Relocation extends BaseEntity{
@@ -34,7 +35,14 @@ export class Relocation extends BaseEntity{
     @Column({"name": "user_id"})
     user_id!: number;
 
-    @ManyToOne(() => User, (user) => user.relocation)
+    @Column({"name": "partment_id"})
+    apartment_id!: number;
+
+    @ManyToOne(() => Users, (user) => user.relocation)
     @JoinColumn({"name": "user_id"})
-    user!: User;
+    user!: Users;
+
+    @ManyToOne(()=> Apartments, (apartment) => apartment.relocation)
+    @JoinColumn({"name": "partment_id"})
+    apartment!: Apartments;
 }

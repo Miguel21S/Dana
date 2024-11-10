@@ -2,8 +2,9 @@ import { Entity, Column, ManyToOne, PrimaryGeneratedColumn, JoinColumn, OneToMan
 import { Building } from "./Buildings";
 import { HomeProperty } from "./HomeProperty";
 import { HelpReceived } from "./HelpReceived";
-import { ResponsibleApartments } from "./ResponsibleApartments";
-import { Damages } from "./damages";
+import { Damages } from "./Damages";
+import { Relocation } from "./Relocation";
+import { UserApartments } from "./UserApartments";
 
 
 @Entity("apartments")
@@ -24,7 +25,7 @@ export class Apartments {
     condition?: string;
 
     @ManyToOne(() => Building, (building) => building.apartments)
-    building!: Building;
+    buildings!: Building;
 
     @OneToMany(() => HomeProperty, (homeproperty) => homeproperty.apartment_id)
     homeproperties!: HomeProperty[];
@@ -32,9 +33,12 @@ export class Apartments {
     @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.apartment_id)
     helpReceived!: HelpReceived[];
 
-    @OneToMany(() => ResponsibleApartments, (responsibleApartments) => responsibleApartments.apartment_id)
-    responsibleApartments!: ResponsibleApartments[];
+    @OneToMany(() => UserApartments, (userApartment) => userApartment.apartment_id)
+    userApartment!: UserApartments[];
 
     @OneToMany(() => Damages, (damage) => damage.apartment_id)
     damages!: Damages[];
+
+    @OneToMany(() => Relocation, (location) => location.apartment_id)
+    relocation!: Relocation[];
 }

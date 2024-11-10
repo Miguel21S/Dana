@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./User";
+import { Users } from "./Users";
 import { Apartments } from "./Apartments";
 
 @Entity("helpReceived")
@@ -32,9 +32,9 @@ export class HelpReceived extends BaseEntity{
     @Column({"name": "apartment"})
     apartment_id!: number;
 
-    @ManyToOne(() => User, (user) => user.helpReceived)
+    @ManyToOne(() => Users, (user) => user.helpReceived)
     @JoinColumn({"name": "user_id"})
-    user!: User;
+    user!: Users;
 
     @ManyToOne(() => Apartments, (apartment) => apartment.helpReceived)
     @JoinColumn({"name": "apartment_id"})

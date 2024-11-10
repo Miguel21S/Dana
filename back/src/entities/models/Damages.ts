@@ -3,6 +3,7 @@ import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColu
 import { Apartments } from "./Apartments";
 import { PersonalProperty } from "./PersonalProperty";
 import { HomeProperty } from "./HomeProperty";
+import { Building } from "./Buildings";
 
 @Entity("damages")
 export class Damages extends BaseEntity{
@@ -22,25 +23,32 @@ export class Damages extends BaseEntity{
     @Column({ "name": "description" })
     description!: string;
 
+    @Column({"name": "building_id"})
+    building_id!: number;
+
     @Column({ "name": "apartment_id" })
     apartment_id!: number;
 
-    @Column({"name": "personal_id"})
-    personal_id!: number;
+    @Column({"name": "personal_property_id"})
+    personal_property_id!: number;
 
-    @Column({"name": "home_id"})
-    home_id!: number;
+    @Column({"name": "home_property_id"})
+    home_property_id!: number;
+
+    @ManyToOne(() => Building, (building) => building.damages)
+    @JoinColumn({"name": "building_id"})
+    building!: Building;
 
     @ManyToOne(() => Apartments, (apartment) => apartment.damages)
     @JoinColumn({"name": "apartment_id"})
     apartment!: Apartments;
 
     @ManyToOne(() => PersonalProperty, (personalProperty) => personalProperty.damages)
-    @JoinColumn({"name": "personal_id"})
+    @JoinColumn({"name": "personal_property_id"})
     personalProperty!: PersonalProperty;
 
     @ManyToOne(() => HomeProperty, (homeProperty) => homeProperty.damages)
-    @JoinColumn({"name": "home_id"})
+    @JoinColumn({"name": "home_property_id"})
     homeProperty!: HomeProperty;
 
 }

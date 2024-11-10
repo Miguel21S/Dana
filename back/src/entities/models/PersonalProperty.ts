@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./User";
-import { Damages } from "./damages";
+import { Users } from "./Users";
+import { Damages } from "./Damages";
 
 
 @Entity("personalProperty")
@@ -21,10 +21,10 @@ export class PersonalProperty extends BaseEntity {
     @Column({"name": "user_id"})
     user_id!: number;
 
-    @ManyToOne(() => User, (user) => user.personalProperty )
+    @ManyToOne(() => Users, (user) => user.personalProperty )
     @JoinColumn({"name": "user_id"})
-    user!: User;
+    user!: Users;
 
-    @OneToMany(() => Damages, (damage) => damage.personal_id)
+    @OneToMany(() => Damages, (damage) => damage.personal_property_id)
     damages!: Damages[];
 }

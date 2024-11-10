@@ -39,22 +39,33 @@ export class Damages1731256609329 implements MigrationInterface {
                         isNullable: true
                     },
                     {
+                        name: "building_id",
+                        type: "int",
+                        isNullable: false,
+                    },
+                    {
                         name: "apartment_id",
                         type: "int",
                         isNullable: false,
                     },
                     {
-                        name: "personal_id",
+                        name: "personal_property_id",
                         type: "int",
                         isNullable: false,
                     },
                     {
-                        name: "home_id",
+                        name: "home_property_id",
                         type: "int",
                         isNullable: false,
                     }
                 ],
                 foreignKeys: [
+                    {
+                        columnNames: ["building_id"],
+                        referencedTableName: "buildings",
+                        referencedColumnNames: ["id"],
+                        onDelete: "CASCADE"
+                    },
                     {
                         columnNames: ["apartment_id"],
                         referencedTableName: "apartments",
@@ -62,13 +73,13 @@ export class Damages1731256609329 implements MigrationInterface {
                         onDelete: "CASCADE"
                     },
                     {
-                        columnNames: ["personal_id"],
+                        columnNames: ["personal_property_id"],
                         referencedTableName: "personalProperty",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     },
                     {
-                        columnNames: ["home_id"],
+                        columnNames: ["home_property_id"],
                         referencedTableName: "home_property",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"

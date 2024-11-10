@@ -70,12 +70,23 @@ export class Relocation1731156274553 implements MigrationInterface {
                         name: "user_id",
                         type: "int",
                         isNullable: false,
+                    },
+                    {
+                        name: "partment_id",
+                        type: "int",
+                        isNullable: false,
                     }
                 ],
                 foreignKeys: [
                     {
                         columnNames: ["user_id"],
                         referencedTableName: "users",
+                        referencedColumnNames: ["id"],
+                        onDelete: "CASCADE"
+                    },
+                    {
+                        columnNames: ["partment_id"],
+                        referencedTableName: "apartments",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     }

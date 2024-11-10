@@ -1,9 +1,10 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./User";
+
 import { Apartments } from "./Apartments";
+import { Users } from "./Users";
 
 @Entity("responsibleApartments")
-export class ResponsibleApartments extends BaseEntity{
+export class UserApartments extends BaseEntity{
 
     @PrimaryGeneratedColumn()
     id!: number;
@@ -17,11 +18,11 @@ export class ResponsibleApartments extends BaseEntity{
     @Column({ "name": "apartment_id" })
     apartment_id!: number;
 
-    @ManyToOne(() => User, (user) => user.responsibleApartments)
+    @ManyToOne(() => Users, (user) => user.userApartments)
     @JoinColumn({ "name": "user_id" })
-    user!: User;
+    user!: Users;
 
-    @ManyToOne(() => Apartments, (apartments) => apartments.responsibleApartments)
+    @ManyToOne(() => Apartments, (apartments) => apartments.userApartment)
     @JoinColumn({ "name": "apartment_id" })
     apartments!: Apartments;
 }
