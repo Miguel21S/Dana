@@ -80,7 +80,7 @@ export class Damages1731256609329 implements MigrationInterface {
                     },
                     {
                         columnNames: ["home_property_id"],
-                        referencedTableName: "home_property",
+                        referencedTableName: "homeProperty",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     }

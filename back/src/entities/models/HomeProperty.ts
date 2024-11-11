@@ -20,7 +20,7 @@ export class HomeProperty extends BaseEntity {
     @Column({ "name": "apartment_id" })
     apartment_id!: number;
 
-    @ManyToOne(() => Apartments, (apartments) => apartments.homeproperties)
+    @ManyToOne(() => Apartments, (apartments) => apartments.homeProperties)
     @JoinColumn({ "name": "apartment_id"})
     apartments!: Apartments;
 

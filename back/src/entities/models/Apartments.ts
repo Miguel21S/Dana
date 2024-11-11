@@ -27,8 +27,11 @@ export class Apartments {
     @ManyToOne(() => Building, (building) => building.apartments)
     buildings!: Building;
 
-    @OneToMany(() => HomeProperty, (homeproperty) => homeproperty.apartment_id)
-    homeproperties!: HomeProperty[];
+    @OneToMany(() => HomeProperty, (homeProperty) => homeProperty.apartment_id)
+    homeProperties!: HomeProperty[];
+    
+    @OneToMany(() => Damages, (damage) => damage.apartment_id)
+    damages!: Damages[];
 
     @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.apartment_id)
     helpReceived!: HelpReceived[];
@@ -36,8 +39,6 @@ export class Apartments {
     @OneToMany(() => UserApartments, (userApartment) => userApartment.apartment_id)
     userApartment!: UserApartments[];
 
-    @OneToMany(() => Damages, (damage) => damage.apartment_id)
-    damages!: Damages[];
 
     @OneToMany(() => Relocation, (location) => location.apartment_id)
     relocation!: Relocation[];

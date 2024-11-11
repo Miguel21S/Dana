@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, JoinColumn, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Users } from "./Users";
 import { Disease } from "./Diseases";
 
@@ -14,11 +14,11 @@ export class UsersDiseases extends BaseEntity{
     @Column({ "name": "disease_id" })
     disease_id!: number;
 
-    @ManyToMany(() => Users, (user) => user.usersDiseases)
-    @JoinColumn({"name": "user_id"})
+    @ManyToOne(() => Users, (user) => user.usersDiseases)
+    @JoinColumn({ "name": "user_id" })
     user!: Users;
 
-    @ManyToMany(() => Disease, (disease) => disease.usersDiseases)
-    @JoinColumn({"name": "disease_id"})
+    @ManyToOne(() => Disease, (disease) => disease.usersDiseases)
+    @JoinColumn({ "name": "disease_id" })
     disease!: Disease;
 }

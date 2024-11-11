@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, JoinColumn, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Users } from "./Users";
 
 @Entity("emergencyContact")
@@ -22,7 +22,7 @@ export class EmergencyContact extends BaseEntity{
     @Column({"name": "user_id"})
     user_id!: number;
 
-    @ManyToMany(() => Users, (user) => user.emergencyContact)
-    @JoinColumn({"name": "user_id"})
-    user!: Users;
+    // @ManyToOne(() => Users, (user) => user.emergencyContact)
+    // @JoinColumn({"name": "user_id"})
+    // user!: Users;
 }

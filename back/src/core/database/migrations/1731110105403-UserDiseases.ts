@@ -15,14 +15,14 @@ export class UserDiseases1731110105403 implements MigrationInterface {
                         generationStrategy: "increment",
                     },
                     {
-                       name: "user_id",
+                        name: "user_id",
                         type: "int",
                         isNullable: false
                     },
                     {
-                       name: "disease_id",
-                       type: "int",
-                       isNullable: false
+                        name: "disease_id",
+                        type: "int",
+                        isNullable: false
                     },
                 ],
                 foreignKeys: [

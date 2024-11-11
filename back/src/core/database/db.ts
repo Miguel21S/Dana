@@ -40,15 +40,14 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASSWORD || "3311",
     database: process.env.DB_DATABASE || "dana_connection",
 
-    entities: [Roles, Users, Building, Disease, Apartments, UsersDiseases, HomeProperty, PersonalProperty,
-        Cars, HelpReceived, EmergencyContact, Relocation, Mascots, UserApartments, Damages
+    entities: [Roles, Users, Building, Disease, Apartments, Cars, HelpReceived, EmergencyContact,
+        Relocation, Mascots, UserApartments, HomeProperty, PersonalProperty, Damages, UsersDiseases
     ],
 
     migrations: [Role1731262325555, Users1731262609503, Buildings1731076572321, Diseases1731076649622,
-        Apartments1731081556109, UserDiseases1731110105403, HomeProperty1731112433694,
-        PersonalProperty1731113876694, Cars1731115048710, HelpRceived1731151727574,
-        EmergencyContact1731155369609, Relocation1731156274553, Mascots1731157157593,
-        UserApartments1731157772130, Damages1731256609329
+        Apartments1731081556109, Cars1731115048710, HelpRceived1731151727574, EmergencyContact1731155369609,
+        Relocation1731156274553, Mascots1731157157593, UserApartments1731157772130, HomeProperty1731112433694,
+        PersonalProperty1731113876694, Damages1731256609329, UserDiseases1731110105403,
 
     ],
 
