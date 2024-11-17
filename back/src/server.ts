@@ -1,16 +1,14 @@
 import express, { Application } from 'express';
 import 'dotenv/config';
 import { AppDataSource } from './core/database/db';
-import { register, login } from './controllers/authController';
+import routerController from './controllers/router';
 
 
 const app: Application = express();
 const PORT =process.env.PORT || 3001;
 
 app.use(express.json());
-app.post('/api/auth', register);
-
-app.post('/api/auth/login', login);
+app.use('/api', routerController);
 
 AppDataSource.initialize()
     .then(() => {

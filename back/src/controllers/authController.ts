@@ -4,7 +4,7 @@ import Jwt from "jsonwebtoken";
 import { Users } from "../entities/models/users";
 
 ///////////////////////////// METHOD REGISTER //////////////////////////
-export const register = async (req: Request, res: Response) => {
+const register = async (req: Request, res: Response) => {
     try {
         const name = req.body.name;
         const lastname = req.body.lastname;
@@ -67,7 +67,7 @@ export const register = async (req: Request, res: Response) => {
 
 
 ///////////////////////////// METHOD LOGIN //////////////////////////
-export const login = async (req: Request, res: Response) => {
+const login = async (req: Request, res: Response) => {
     try {
         const email = req.body.email
         const password = req.body.password;
@@ -142,3 +142,5 @@ export const login = async (req: Request, res: Response) => {
         
     }
 }
+
+export { register, login };
