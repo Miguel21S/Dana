@@ -4,28 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "start": "node dist/index.js",
+    "start": "node dist/index.js",
     "build": "tsc",
     "dev": "nodemon --watch src --exec ts-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migration:run": "typeorm-ts-node-commonjs migration:run -d ./src/core/database/db.ts",
     "migration:create": "typeorm-ts-node-commonjs migration:create -n /src/database/migrations/user",
     "migration:revert": "typeorm-ts-node-commonjs migration:revert -d ./src/core/database/db.ts"
-
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.9.0",
+    "express": "^4.21.1",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
-    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.20"
   }
