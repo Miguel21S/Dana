@@ -1,4 +1,5 @@
 
+import { CLink } from "../CLink/CLink"
 import "./Header.css"
 export const Header = () => {
     return (
@@ -61,7 +62,7 @@ export const Header = () => {
                             </form> */}
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Iniciar Sension </a>
+                                    <CLink path="/login" title="Iniciar Sension" />
                                 </li>
                             </ul>
                         </div>
