@@ -1,8 +1,15 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
 
+import React from 'react';
+import './index.css';
+import store from "./app/store.js";
+import App from './App.jsx';
+import persistStore from 'redux-persist/es/persistStore';
+
+const persistor = persistStore(store);
 const router = createBrowserRouter([
   {
       path: "*",
@@ -20,5 +27,13 @@ const router = createBrowserRouter([
 });
 
 createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <React.StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        {/* <BrowserRouter> */}
+          <RouterProvider router={router} />
+        {/* </BrowserRouter> */}
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>
 );
