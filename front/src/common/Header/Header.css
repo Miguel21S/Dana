@@ -1,0 +1,82 @@
+
+
+.con>p {
+    color: rgb(10, 10, 10);
+}
+
+.headerDesign {
+    background-color: rgb(216, 17, 17);
+    padding: 10px;
+    width: auto;
+    text-align: center;
+    box-shadow: -7px 8px 8px rgb(66, 47, 60);
+    border-radius: 4px;
+    color: rgb(3, 2, 2);
+
+    /* display: flex;
+    flex-flow: row nowrap;
+
+    border-bottom: 1px solid #fff; */
+}
+
+
+a {
+    float: left;
+    padding: 14px 16px;
+    color: white;
+
+
+}
+
+.subnavbar .navbarbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbarbtn {
+    color: rgb(255, 255, 255);
+}
+
+ a:hover,
+.subnavbar:hover .navbarbtn {
+    background-color: transparent;
+    color: rgb(20, 221, 147);
+}
+
+.subnavbar-content {
+    background-color: rgb(99, 99, 99);
+    display: none;
+    position: absolute;
+    padding: 1%;
+    width: 20%;
+    border-radius: 10px;
+    box-shadow: -52px, 52px 52px rgb(160, 97, 97);
+}
+
+.subnavbar-content a {
+    float: left;
+    text-decoration: none;
+    color: white;
+}
+
+.subnavbar-content a:hover {
+    color: rgb(20, 221, 147);
+}
+
+.subnavbar:hover .subnavbar-content {
+    display: block;
+}
+
+.centrar{
+    margin-left: 7cap;
+}
+
+.form-control{
+    width: 35cap;
+}

@@ -1,0 +1,12 @@
+.clickDesign {
+    font-weight: bold;
+    margin: 1em;
+    transition: 0.3s;
+}
+
+.clink-design:hover {
+
+    transition: 0.3s;
+    /* color: black; */
+    cursor: pointer;
+}
