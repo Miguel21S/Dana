@@ -2,6 +2,34 @@
 .loginDesign {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+}
+
+.containerLogin {
+    margin-top: 6%;
+    width: 30%;
+    height: 40vh;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardComponents {
+    width: 29vw;
+    height: 38vh;
+    display: flex;
+    background-color: rgb(219, 232, 223);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    margin-top: 14px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 25.4%;
 }

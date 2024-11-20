@@ -1,12 +1,39 @@
 
 .homeDesign{
-    background-color: rgb(255, 245, 245);
-    min-height: 90vh;
+    background-color: rgba(53, 5, 36, 0.141);
+    /* min-height: 90vh;
     width: 98.9vw;
-    margin: 0 auto;
+    margin: 0 auto; */
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.containerHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#card-home {
+    margin: 5px;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
+}
+
+.cardSecundary {
+    margin-left: 20px;
+    
 }
