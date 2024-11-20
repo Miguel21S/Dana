@@ -1,4 +1,5 @@
 import express, { Application } from 'express';
+import cors from 'cors';
 import 'dotenv/config';
 import { AppDataSource } from './core/database/db';
 import routerController from './controllers/router';
@@ -8,6 +9,7 @@ const app: Application = express();
 const PORT =process.env.PORT || 3001;
 
 app.use(express.json());
+app.use(cors());
 app.use('/api', routerController);
 
 AppDataSource.initialize()
