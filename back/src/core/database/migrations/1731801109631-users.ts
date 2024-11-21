@@ -32,13 +32,12 @@ export class Users1731801109631 implements MigrationInterface {
                             name: "date_born",
                             type: "date",
                             isNullable: false,
-                            default: "CURRENT_DATE",
                         },
                         {
                             name: "gender",
                             type: "varchar",
                             length: "50",
-                            isNullable: true
+                            isNullable: false
                         },
                         {
                             name: "phone",

@@ -1,5 +1,6 @@
-import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Roles } from "./roles";
+import { Cars } from "../Cars";
 
 @Entity("users")
 export class Users extends BaseEntity{
@@ -34,4 +35,7 @@ export class Users extends BaseEntity{
     @ManyToOne(() => Roles, (roles) => roles.users)
     @JoinColumn({'name': 'role_id'})
     role!: Roles;
+
+    @OneToMany(() => Cars, (cars) => cars.user_id)
+    cars!: Cars[];
 }

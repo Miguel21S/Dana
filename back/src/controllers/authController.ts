@@ -6,12 +6,12 @@ import { Users } from "../entities/models/users";
 ///////////////////////////// METHOD REGISTER //////////////////////////
 const register = async (req: Request, res: Response) => {
     try {
-        const { name, lastname, email, date_born, password } = req.body;
+        const { name, lastname, email, date_born, gender, password } = req.body;
 
-        if (!name || !lastname || !email || !date_born || !password) {
+        if (!name || !lastname || !email || !date_born || !gender || !password) {
             res.status(400).json({
                 success: false,
-                message: "All fields are required: name, lastname, email, date_born, password",
+                message: "All fields are required: name, lastname, email, date_born, gender, password",
             });
             return;
         }
@@ -42,6 +42,15 @@ const register = async (req: Request, res: Response) => {
             return
         }
 
+        const user = await Users.findOne({ where: { email } });
+        if (email === user?.email){
+            res.status(400).json({
+                success: false,
+                message: 'Email already exists',
+            });
+            return;
+        }
+
         const passwordEcrypted = bcrypt.hashSync(password, 8);
 
         await Users.create(
@@ -50,6 +59,7 @@ const register = async (req: Request, res: Response) => {
                 lastname,
                 email,
                 date_born,
+                gender,
                 password: passwordEcrypted,
                 role: {
                     id :2
