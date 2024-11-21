@@ -1,6 +1,7 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Roles } from "./roles";
 import { Cars } from "../Cars";
+import { HelpReceived } from "./HelpReceived";
 
 @Entity("users")
 export class Users extends BaseEntity{
@@ -38,4 +39,7 @@ export class Users extends BaseEntity{
 
     @OneToMany(() => Cars, (cars) => cars.user_id)
     cars!: Cars[];
+
+    @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.user_id)
+    helpReceived!: HelpReceived[];
 }

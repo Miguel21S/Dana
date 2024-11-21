@@ -1,6 +1,7 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Building } from "./Building";
 import { ApartmentsMembers } from "./apartmentMembers";
+import { HelpReceived } from "./HelpReceived";
 
 @Entity("apartments")
 export class Apartments {
@@ -31,8 +32,8 @@ export class Apartments {
     // @OneToMany(() => Damages, (damage) => damage.apartment_id)
     // damages!: Damages[];
 
-    // @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.apartment_id)
-    // helpReceived!: HelpReceived[];
+    @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.apartment_id)
+    helpReceived!: HelpReceived[];
 
     // @OneToMany(() => UserApartments, (userApartment) => userApartment.apartment_id)
     // userApartment!: UserApartments[];
