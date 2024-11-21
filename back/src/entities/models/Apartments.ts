@@ -25,15 +25,15 @@ export class Apartments {
 
     @OneToMany(() => ApartmentsMembers, (apartmentMember) => apartmentMember.apartment_id)
     apartmentMembers!: ApartmentsMembers[];
+    
+    @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.apartment_id)
+    helpReceived!: HelpReceived[];
 
     // @OneToMany(() => HomeProperty, (homeProperty) => homeProperty.apartment_id)
     // homeProperties!: HomeProperty[];
     
     // @OneToMany(() => Damages, (damage) => damage.apartment_id)
     // damages!: Damages[];
-
-    @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.apartment_id)
-    helpReceived!: HelpReceived[];
 
     // @OneToMany(() => UserApartments, (userApartment) => userApartment.apartment_id)
     // userApartment!: UserApartments[];

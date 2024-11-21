@@ -17,6 +17,8 @@ import { Cars } from '../../entities/Cars';
 import { Cars1732158255706 } from './migrations/1732158255706-cars';
 import { HelpReceived } from '../../entities/models/HelpReceived';
 import { HelpReceived1732203326025 } from './migrations/1732203326025-helpReceived';
+import { EmergencyContact } from '../../entities/models/EmergencyContact';
+import { EmergencyContact1732204501649 } from './migrations/1732204501649-emergencyContact';
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -26,11 +28,13 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASSWORD || "3311",
     database: process.env.DB_DATABASE || "dana_connection",
 
-    entities: [ Roles, Users, Building, Disease, Apartments, ApartmentsMembers, Cars, HelpReceived
+    entities: [ Roles, Users, Building, Disease, Apartments, ApartmentsMembers, Cars, HelpReceived,
+        EmergencyContact
     ],
 
     migrations: [ Role1731800867772, Users1731801109631, Building1732147504718, Disease1732157980253,
-        Apartments1732150168072, ApartmentMembers1732148044881, Cars1732158255706, HelpReceived1732203326025
+        Apartments1732150168072, ApartmentMembers1732148044881, Cars1732158255706, HelpReceived1732203326025,
+        EmergencyContact1732204501649
     ],
 
     synchronize: false,

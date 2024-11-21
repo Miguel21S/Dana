@@ -2,6 +2,7 @@ import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGe
 import { Roles } from "./roles";
 import { Cars } from "../Cars";
 import { HelpReceived } from "./HelpReceived";
+import { EmergencyContact } from "./EmergencyContact";
 
 @Entity("users")
 export class Users extends BaseEntity{
@@ -42,4 +43,7 @@ export class Users extends BaseEntity{
 
     @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.user_id)
     helpReceived!: HelpReceived[];
+
+    @OneToMany(() => EmergencyContact, (emergencyContact) => emergencyContact.user_id)
+    emergencyContact!: EmergencyContact[];
 }
