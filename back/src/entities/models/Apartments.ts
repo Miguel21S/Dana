@@ -2,6 +2,7 @@ import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "ty
 import { Building } from "./Building";
 import { ApartmentsMembers } from "./apartmentMembers";
 import { HelpReceived } from "./HelpReceived";
+import { Relocation } from "./Relocation";
 
 @Entity("apartments")
 export class Apartments {
@@ -29,6 +30,9 @@ export class Apartments {
     @OneToMany(() => HelpReceived, (helpReceived) => helpReceived.apartment_id)
     helpReceived!: HelpReceived[];
 
+    @OneToMany(() => Relocation, (relocation) => relocation.apartment_id)
+    relocation!: Relocation[];
+    
     // @OneToMany(() => HomeProperty, (homeProperty) => homeProperty.apartment_id)
     // homeProperties!: HomeProperty[];
     
@@ -39,6 +43,4 @@ export class Apartments {
     // userApartment!: UserApartments[];
 
 
-    // @OneToMany(() => Relocation, (location) => location.apartment_id)
-    // relocation!: Relocation[];
 }
