@@ -3,6 +3,7 @@ import { Building } from "./Building";
 import { ApartmentsMembers } from "./apartmentMembers";
 import { HelpReceived } from "./HelpReceived";
 import { Relocation } from "./Relocation";
+import { UserApartments } from "./UserApartments";
 
 @Entity("apartments")
 export class Apartments {
@@ -33,14 +34,15 @@ export class Apartments {
     @OneToMany(() => Relocation, (relocation) => relocation.apartment_id)
     relocation!: Relocation[];
     
+    @OneToMany(() => UserApartments, (userApartment) => userApartment.apartment_id)
+    userApartment!: UserApartments[];
+
     // @OneToMany(() => HomeProperty, (homeProperty) => homeProperty.apartment_id)
     // homeProperties!: HomeProperty[];
     
     // @OneToMany(() => Damages, (damage) => damage.apartment_id)
     // damages!: Damages[];
 
-    // @OneToMany(() => UserApartments, (userApartment) => userApartment.apartment_id)
-    // userApartment!: UserApartments[];
 
 
 }

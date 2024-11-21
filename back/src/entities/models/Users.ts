@@ -4,6 +4,8 @@ import { Cars } from "./Cars";
 import { HelpReceived } from "./HelpReceived";
 import { EmergencyContact } from "./EmergencyContact";
 import { Relocation } from "./Relocation";
+import { Mascots } from "./Mascots";
+import { UserApartments } from "./UserApartments";
 
 @Entity("users")
 export class Users extends BaseEntity{
@@ -50,4 +52,10 @@ export class Users extends BaseEntity{
 
     @OneToMany(() => Relocation, (relocation) => relocation.user_id)
     relocation!: Relocation[];
+
+    @OneToMany(() => Mascots, (mascots) => mascots.user_id)
+    mascots!: Mascots[];
+
+    @OneToMany(() => UserApartments, (userApartment) => userApartment.user_id)
+    userApartment!: UserApartments[];
 }
