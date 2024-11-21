@@ -31,7 +31,8 @@ export class Users1731801109631 implements MigrationInterface {
                         {
                             name: "date_born",
                             type: "date",
-                            isNullable: true
+                            isNullable: false,
+                            default: "CURRENT_DATE",
                         },
                         {
                             name: "gender",

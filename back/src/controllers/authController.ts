@@ -6,10 +6,15 @@ import { Users } from "../entities/models/users";
 ///////////////////////////// METHOD REGISTER //////////////////////////
 const register = async (req: Request, res: Response) => {
     try {
-        const name = req.body.name;
-        const lastname = req.body.lastname;
-        const email = req.body.email;
-        const password = req.body.password;
+        const { name, lastname, email, date_born, password } = req.body;
+
+        if (!name || !lastname || !email || !date_born || !password) {
+            res.status(400).json({
+                success: false,
+                message: "All fields are required: name, lastname, email, date_born, password",
+            });
+            return;
+        }
 
         const validPassword = /^(?=.*\d)(?=.*[!\"#\$%&'()*+,-./:;<=>?@[\\\]^_])(?=.*[A-Z])(?=.*[a-z])\S{8,}$/
         if (password.length < 8) {
@@ -23,7 +28,7 @@ const register = async (req: Request, res: Response) => {
         if (!validPassword.test(password)) {
             res.status(404).json({
                 sucess: false,
-                message: 'La contraseña debe tener al menos un dígito, un carácter especial, una letra mayúscula, una letra minúscula y ningún espacio.'
+                message: 'Password must include at least one digit, one special character, one uppercase letter, one lowercase letter, and no spaces.'
             })
             return 
         }
@@ -41,9 +46,10 @@ const register = async (req: Request, res: Response) => {
 
         await Users.create(
             {
-                name: name,
-                lastname: lastname,
-                email: email,
+                name,
+                lastname,
+                email,
+                date_born,
                 password: passwordEcrypted,
                 role: {
                     id :2
