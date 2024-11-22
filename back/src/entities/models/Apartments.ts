@@ -5,6 +5,7 @@ import { HelpReceived } from "./HelpReceived";
 import { Relocation } from "./Relocation";
 import { UserApartments } from "./UserApartments";
 import { HomeProperty } from "./HomeProperty";
+import { Damages } from "./Damages";
 
 @Entity("apartments")
 export class Apartments {
@@ -41,8 +42,8 @@ export class Apartments {
     @OneToMany(() => HomeProperty, (homeProperty) => homeProperty.apartment_id)
     homeProperty!: HomeProperty[];
     
-    // @OneToMany(() => Damages, (damage) => damage.apartment_id)
-    // damages!: Damages[];
+    @OneToMany(() => Damages, (damage) => damage.apartment_id)
+    damages!: Damages[];
 
 
 

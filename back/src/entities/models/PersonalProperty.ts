@@ -1,5 +1,6 @@
-import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Users } from "./users";
+import { Damages } from "./Damages";
 
 
 @Entity("personalProperty")
@@ -24,6 +25,6 @@ export class PersonalProperty extends BaseEntity {
     @JoinColumn({"name": "user_id"})
     user!: Users;
 
-    // @OneToMany(() => Damages, (damage) => damage.personal_property_id)
-    // damages!: Damages[];
+    @OneToMany(() => Damages, (damage) => damage.personal_property_id)
+    damages!: Damages[];
 }

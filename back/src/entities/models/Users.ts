@@ -7,6 +7,7 @@ import { Relocation } from "./Relocation";
 import { Mascots } from "./Mascots";
 import { UserApartments } from "./UserApartments";
 import { PersonalProperty } from "./PersonalProperty";
+import { UsersDiseases } from "./UsersDiseases";
 
 @Entity("users")
 export class Users extends BaseEntity{
@@ -62,4 +63,7 @@ export class Users extends BaseEntity{
 
     @OneToMany(() => PersonalProperty, (personalProperty) => personalProperty.user_id)
     personalProperty!: PersonalProperty[];
+
+    @OneToMany(() => UsersDiseases, (usersDiseases) => usersDiseases.user_id)
+    usersDiseases!: UsersDiseases[];
 }

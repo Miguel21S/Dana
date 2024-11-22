@@ -1,5 +1,6 @@
 import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Apartments } from "./apartments";
+import { Damages } from "./Damages";
 
 @Entity("building")
 export class Building extends BaseEntity{
@@ -34,7 +35,7 @@ export class Building extends BaseEntity{
     @OneToMany(() => Apartments, (apartment) => apartment.buildings)
     apartments!: Apartments[];
 
-    // @OneToMany(() => Damages, (damage) => damage.building)
-    // damages!: Damages[];
+    @OneToMany(() => Damages, (damage) => damage.building)
+    damages!: Damages[];
 
 }
