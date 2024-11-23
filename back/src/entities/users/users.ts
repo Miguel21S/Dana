@@ -31,6 +31,7 @@ const getUsers = async (req: Request, res: Response) => {
 
         res.status(200).json({
             success: true,
+            message: "list of users successfully found",
             data: users,
         });
 
@@ -42,6 +43,62 @@ const getUsers = async (req: Request, res: Response) => {
         });
     }
 
+}
+
+const deleteUser = async (req: Request, res: Response) => { 
+    try {
+        const { roleId, roleName } = req.tokenData;
+        const user_id = req.params.id;
+
+        if(roleName !== 'admin') {
+            res.status(404).json({
+                sucess: false,
+                messsage: 'Unauthorized access',
+            });
+            return;
+        }
+
+        const user = await Users.findOne({ where: { id: parseInt(user_id) }, select: ["id", "role_id"] });
+
+        if(!user){
+            res.status(404).json({
+                success: false,
+                message: "User not found",
+            });
+            return;
+        }
+
+        if(user.id === roleId){
+            res.status(403).json({
+                success: false,
+                message: "Administrators cannot delete themselves",
+            });
+            return;
+        }
+
+        if(user.role_id === 1){
+            res.status(403).json({
+                success: false,
+                message: "Administrators cannot delete other administrators"
+            });
+            return;
+        }
+
+        const removeUser: any = await Users.delete(user?.id);
+
+        res.status(200).json({
+            success: true,
+            message: "User deleted successfully",
+            data: removeUser,
+        })
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Error deleting user",
+            error: error
+        });
+        
+    }
 }
 
 const getPrifile = async (req: Request, res: Response) => {
@@ -86,4 +143,4 @@ const getPrifile = async (req: Request, res: Response) => {
     }
 }
 
-export { getUsers, getPrifile };
+export { getUsers, getPrifile, deleteUser };
