@@ -27,11 +27,17 @@ export class Users extends BaseEntity{
     @Column({'name': 'gender'})
     gender!: string;
 
+    @Column({'name': 'special_situation'})
+    special_situation!: string;
+
     @Column({'name': 'phone'})
     phone!: string;
     
     @Column({'name': 'email'})
     email!: string;
+
+    @Column({'name': 'date_entry_apartment'})
+    date_entry_apartment!: Date;
     
     @Column({'name': 'password'})
     password!: string;

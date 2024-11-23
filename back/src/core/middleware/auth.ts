@@ -3,14 +3,15 @@ import Jwt from "jsonwebtoken";
 import { TokenData } from "../../types";
 
 
-export const auth = async (req: Request, res: Response, next: NextFunction) => {
+export const auth = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         const token = req.headers.authorization?.split(" ")[1];
         if (!token) {
-            return res.status(401).json({
+            res.status(401).json({
                 sucess: false,
                 message: "Usuario no autorizado"
             })
+            return
         }
 
         //VERIFICACIÓN DEL TOKEN
@@ -22,9 +23,10 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
         req.tokenData = decode as TokenData;
         next();
     } catch (error) {
-        return res.status(500).json({
+        res.status(500).json({
             success: false,
             message: "Error token no valido"
         })
+        return
     }
 }

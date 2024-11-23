@@ -7,6 +7,15 @@ import { Users } from "../entities/models/users";
 const register = async (req: Request, res: Response) => {
     try {
         const { name, lastname, email, date_born, gender, password } = req.body;
+        const comparePassword = req.body.comparePassword;
+
+        if(password !== comparePassword){
+            res.status(400).json({
+                success: false,
+                message: "Passwords do not match",
+            });
+            return;
+        }
 
         if (!name || !lastname || !email || !date_born || !gender || !password) {
             res.status(400).json({
