@@ -6,6 +6,7 @@ import { auth } from "../../core/middleware/auth";
 const router = Router();
 
 router.post('/auth/admin/create/building', auth, building.createBuilding);
+router.get('/auth/admin/list/buildings', auth, building.getBuildings);
 router.put('/auth/admin/update/building/:id', auth, building.updateBuilding);
 router.delete('/auth/admin/delete/building/:id', auth, building.deleteBuilding);
 
