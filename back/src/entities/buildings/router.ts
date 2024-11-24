@@ -7,5 +7,6 @@ const router = Router();
 
 router.post('/auth/admin/create/building', auth, building.createBuilding);
 router.put('/auth/admin/update/building/:id', auth, building.updateBuilding);
+router.delete('/auth/admin/delete/building/:id', auth, building.deleteBuilding);
 
 export default router;
