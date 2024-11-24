@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Mascots1732230742176 implements MigrationInterface {
+export class HelpReceived1732403694500 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table ({
-             name: "mascots",
+             name: "helpReceived",
              columns: [
                  {
                      name: "id",
@@ -21,32 +21,41 @@ export class Mascots1732230742176 implements MigrationInterface {
                      isNullable: false
                  },
                  {
-                     name: "species",
-                     type: "varchar",
-                     length: "50",
+                     name: "quantity",
+                     type: "int",
                      isNullable: false
                  },
                  {
-                     name: "race",
+                     name: "description",
                      type: "varchar",
-                     length: "50",
+                     length: "255",
                      isNullable: true
                  },
                  {
-                     name: "age",
-                     type: "int",
-                     isNullable: true
-                 },
-                 {
-                     name: "condition",
-                     type: "varchar",
-                     length: "50",
+                     name: "date_receipt",
+                     type: "date",
                      isNullable: false
                  },
                  {
-                     name: "user_id",
+                     name: "organization",
+                     type: "varchar",
+                     length: "255",
+                     isNullable: false
+                 },
+                 {
+                     name: "mount",
+                     type: "decimal",
+                     isNullable: false
+                 },
+                 {
+                    name: "user_id",
+                    type: "int",
+                    isNullable: false
+                 },
+                 {
+                     name: "apartment_id",
                      type: "int",
-                     isNullable: false,
+                     isNullable: false
                  }
              ],
              foreignKeys: [
@@ -55,6 +64,12 @@ export class Mascots1732230742176 implements MigrationInterface {
                      referencedTableName: "users",
                      referencedColumnNames: ["id"],
                      onDelete: "CASCADE"
+                 },
+                 {
+                    columnNames: ["apartment_id"],
+                    referencedTableName: "apartments",
+                    referencedColumnNames: ["id"],
+                    onDelete: "CASCADE"
                  }
              ]
             }),
@@ -63,7 +78,7 @@ export class Mascots1732230742176 implements MigrationInterface {
      }
  
      public async down(queryRunner: QueryRunner): Promise<void> {
-         await queryRunner.dropTable("mascots");
+         await queryRunner.dropTable("helpReceived");
     }
 
 }

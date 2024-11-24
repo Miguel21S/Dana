@@ -4,6 +4,7 @@ import 'dotenv/config';
 import { AppDataSource } from './core/database/db';
 import routerController from './controllers/router';
 import routerUsers from './entities/users/router';
+import routerBuildign from './entities/buildings/router'
 
 
 const app: Application = express();
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/api', routerController);
 app.use('/api', routerUsers);
+app.use('/api', routerBuildign);
 
 AppDataSource.initialize()
     .then(() => {

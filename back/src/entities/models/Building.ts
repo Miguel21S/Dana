@@ -2,7 +2,7 @@ import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "t
 import { Apartments } from "./apartments";
 import { Damages } from "./Damages";
 
-@Entity("building")
+@Entity("buildings")
 export class Building extends BaseEntity{
 
     @PrimaryGeneratedColumn()
@@ -15,7 +15,7 @@ export class Building extends BaseEntity{
     number_build!: number;
 
     @Column({ "name": "postal_code" })
-    postalCode!: string;
+    postal_code!: string;
 
     @Column({ "name": "city" })
     city!: string;
@@ -26,11 +26,14 @@ export class Building extends BaseEntity{
     @Column({ "name": "quantity_apartment" })
     quantity_apartment!: number;
 
+    @Column({ "name": "build_type" })
+    build_type!: string;
+    
     @Column({ "name": "floor_number" })
     floor_number!: number;
 
-    @Column({ "name": "build_type" })
-    build_type!: string;
+    @Column({"name": "image_path"})
+    image_path!: string;
 
     @OneToMany(() => Apartments, (apartment) => apartment.buildings)
     apartments!: Apartments[];

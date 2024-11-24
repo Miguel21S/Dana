@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Relocation1732228633501 implements MigrationInterface {
+export class Mascots1732403862159 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "relocation",
+                name: "mascots",
                 columns: [
                     {
                         name: "id",
@@ -15,64 +15,42 @@ export class Relocation1732228633501 implements MigrationInterface {
                         generationStrategy: "increment"
                     },
                     {
-                        name: "newAddress",
+                        name: "name",
                         type: "varchar",
                         length: "255",
                         isNullable: false
                     },
                     {
-                        name: "postalCode",
-                        type: "varchar",
-                        length: "10",
-                        isNullable: false
-                    },
-                    {
-                        name: "city",
+                        name: "species",
                         type: "varchar",
                         length: "50",
                         isNullable: false
                     },
                     {
-                        name: "province",
-                        type: "varchar",
-                        length: "50",
-                        isNullable: false
-                    },
-                    {
-                        name: "buildType",
+                        name: "race",
                         type: "varchar",
                         length: "50",
                         isNullable: true
                     },
                     {
-                        name: "floorNumber",
+                        name: "age",
                         type: "int",
                         isNullable: true
                     },
                     {
-                        name: "dateRelocation",
-                        type: "date",
-                        isNullable: true
-                    },
-                    {
-                        name: "reasonRelocation",
-                        type: "varchar",
-                        length: "255",
-                        isNullable: true
-                    },
-                    {
-                        name: "estimatedDuration",
+                        name: "condition",
                         type: "varchar",
                         length: "50",
+                        isNullable: false
+                    },
+                    {
+                        name: "image_path",
+                        type: "varchar",
+                        length: "255",
                         isNullable: true
                     },
                     {
                         name: "user_id",
-                        type: "int",
-                        isNullable: false,
-                    },
-                    {
-                        name: "apartment_id",
                         type: "int",
                         isNullable: false,
                     }
@@ -83,12 +61,6 @@ export class Relocation1732228633501 implements MigrationInterface {
                         referencedTableName: "users",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
-                    },
-                    {
-                        columnNames: ["apartment_id"],
-                        referencedTableName: "apartments",
-                        referencedColumnNames: ["id"],
-                        onDelete: "CASCADE"
                     }
                 ]
             }),
@@ -97,7 +69,7 @@ export class Relocation1732228633501 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("relocation");
+        await queryRunner.dropTable("mascots");
     }
 
 }

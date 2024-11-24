@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Damages1732233235036 implements MigrationInterface {
+export class Damages1732404053433 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
@@ -34,6 +34,12 @@ export class Damages1732233235036 implements MigrationInterface {
                     },
                     {
                         name: "description",
+                        type: "varchar",
+                        length: "255",
+                        isNullable: true
+                    },
+                    {
+                        name: "image_path",
                         type: "varchar",
                         length: "255",
                         isNullable: true

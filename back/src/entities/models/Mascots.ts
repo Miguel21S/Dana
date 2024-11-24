@@ -23,6 +23,9 @@ export class Mascots extends BaseEntity{
     @Column({ "name": "condition" })
     condition!: string;
 
+    @Column({ "name": "image_path" })
+    image_path!: string;
+
     @Column({ "name": "user_id" })
     user_id!: number;
 

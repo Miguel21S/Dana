@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class UserApartments1732231147902 implements MigrationInterface {
+export class Relocation1732403807017 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "userApartments",
+                name: "relocation",
                 columns: [
                     {
                         name: "id",
@@ -15,19 +15,55 @@ export class UserApartments1732231147902 implements MigrationInterface {
                         generationStrategy: "increment"
                     },
                     {
-                        name: "relation_type",
+                        name: "new_address",
                         type: "varchar",
-                        length: "100",
+                        length: "255",
                         isNullable: false
                     },
                     {
-                        name: "start_date",
-                        type: "date",
+                        name: "postal_code",
+                        type: "varchar",
+                        length: "10",
                         isNullable: false
                     },
                     {
-                        name: "end_date",
+                        name: "city",
+                        type: "varchar",
+                        length: "50",
+                        isNullable: false
+                    },
+                    {
+                        name: "province",
+                        type: "varchar",
+                        length: "50",
+                        isNullable: false
+                    },
+                    {
+                        name: "build_type",
+                        type: "varchar",
+                        length: "50",
+                        isNullable: true
+                    },
+                    {
+                        name: "floor_number",
+                        type: "int",
+                        isNullable: true
+                    },
+                    {
+                        name: "date_relocation",
                         type: "date",
+                        isNullable: true
+                    },
+                    {
+                        name: "reason_relocation",
+                        type: "varchar",
+                        length: "255",
+                        isNullable: true
+                    },
+                    {
+                        name: "estimated_duration",
+                        type: "varchar",
+                        length: "50",
                         isNullable: true
                     },
                     {
@@ -39,7 +75,7 @@ export class UserApartments1732231147902 implements MigrationInterface {
                         name: "apartment_id",
                         type: "int",
                         isNullable: false,
-                    },
+                    }
                 ],
                 foreignKeys: [
                     {
@@ -61,7 +97,7 @@ export class UserApartments1732231147902 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("userApartments");
+        await queryRunner.dropTable("relocation");
     }
 
 }

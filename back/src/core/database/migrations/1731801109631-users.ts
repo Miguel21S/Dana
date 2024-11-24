@@ -70,6 +70,12 @@ export class Users1731801109631 implements MigrationInterface {
                             isNullable: false
                         },
                         {
+                            name: "image_path",
+                            type: "varchar",
+                            length: "255",
+                            isNullable: true
+                        },
+                        {
                             name: "role_id",
                             type: "int",
                             isNullable: false

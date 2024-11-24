@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class HomeProperty1732231936330 implements MigrationInterface {
+export class HomeProperty1732403963545 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
@@ -27,6 +27,12 @@ export class HomeProperty1732231936330 implements MigrationInterface {
                     },
                     {
                         name: "condition",
+                        type: "varchar",
+                        length: "255",
+                        isNullable: true
+                    },
+                    {
+                        name: "image_path",
                         type: "varchar",
                         length: "255",
                         isNullable: true

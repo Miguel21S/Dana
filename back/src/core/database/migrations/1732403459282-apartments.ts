@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class PersonalProperty1732232460106 implements MigrationInterface {
+export class Apartments1732403459282 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "personalProperty",
+                name: "apartments",
                 columns: [
                     {
                         name: "id",
@@ -15,42 +15,54 @@ export class PersonalProperty1732232460106 implements MigrationInterface {
                         generationStrategy: "increment"
                     },
                     {
-                        name: "description",
-                        type: "varchar",
-                        length: "255",
+                        name: "apartament_number",
+                        type: "int",
                         isNullable: false
                     },
                     {
-                        name: "value_approximate",
-                        type: "decimal",
-                        isNullable: false,
+                        name: "number_floor",
+                        type: "int",
+                        isNullable: false
+                    },
+                    {
+                        name: "area_m2",
+                        type: "varchar",
+                        length: "50",
+                        isNullable: true
                     },
                     {
                         name: "condition",
                         type: "varchar",
-                        length: "255",
-                        isNullable: true,
+                        length: "1000",
+                        isNullable: true
                     },
                     {
-                        name: "user_id",
+                        name: "image_path",
+                        type: "varchar",
+                        length: "255",
+                        isNullable: true
+                    },
+                    {
+                        name: "building_id",
                         type: "int",
                         isNullable: false,
                     }
                 ],
                 foreignKeys: [
                     {
-                        columnNames: ["user_id"],
-                        referencedTableName: "users",
+                        columnNames: ["building_id"],
+                        referencedTableName: "buildings",
                         referencedColumnNames: ["id"],
                         onDelete: "CASCADE"
                     }
                 ]
-            }),
+            }),            
             true
-        );
+        )
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("personalProperty");
+        await queryRunner.dropTable("apartments");
     }
+
 }

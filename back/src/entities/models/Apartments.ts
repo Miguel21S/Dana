@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Building } from "./Building";
 import { ApartmentsMembers } from "./apartmentMembers";
 import { HelpReceived } from "./HelpReceived";
@@ -12,8 +12,8 @@ export class Apartments {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column({"name": "apartment_number"})
-    apartment_number!: number;
+    @Column({"name": "apartament_number"})
+    apartament_number!: number;
 
     @Column({"name": "number_floor"})
     number_floor!: number;
@@ -24,7 +24,14 @@ export class Apartments {
     @Column({"name": "condition"})
     condition!: string;
 
+    @Column({"name": "image_path"})
+    image_path!: string;
+
+    @Column({"name": "building_id"})
+    building_id!: number;
+
     @ManyToOne(() => Building, (building) => building.apartments)
+    @JoinColumn({"name": "building_id"})
     buildings!: Building;
 
     @OneToMany(() => ApartmentsMembers, (apartmentMember) => apartmentMember.apartment_id)

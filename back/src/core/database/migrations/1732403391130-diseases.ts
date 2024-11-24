@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Disease1732157980253 implements MigrationInterface {
+export class Diseases1732403391130 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
@@ -15,7 +15,7 @@ export class Disease1732157980253 implements MigrationInterface {
                         generationStrategy: "increment"
                     },
                     {
-                        name: "disease_name",
+                        name: "name",
                         type: "varchar",
                         length: "255",
                         isNullable: true
@@ -34,4 +34,5 @@ export class Disease1732157980253 implements MigrationInterface {
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable("diseases");
     }
+
 }

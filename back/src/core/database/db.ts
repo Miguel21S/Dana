@@ -1,38 +1,38 @@
 import 'dotenv/config';
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { Role1731800867772 } from './migrations/1731800867772-role';
-import { Users1731801109631 } from './migrations/1731801109631-users';
 import { Roles } from '../../entities/models/roles';
+import { Role1731800867772 } from './migrations/1731800867772-role';
 import { Users } from '../../entities/models/users';
+import { Users1731801109631 } from './migrations/1731801109631-users';
 import { Building } from '../../entities/models/Building';
-import { Building1732147504718 } from './migrations/1732147504718-building';
-import { Apartments } from '../../entities/models/apartments';
-import { Apartments1732150168072 } from './migrations/1732150168072-apartments';
-import { ApartmentMembers1732148044881 } from './migrations/1732148044881-apartmentMembers';
-import { ApartmentsMembers } from '../../entities/models/apartmentMembers';
+import { Buildings1732403279446 } from './migrations/1732403279446-buildings';
 import { Disease } from '../../entities/models/Disease';
-import { Disease1732157980253 } from './migrations/1732157980253-disease';
+import { Diseases1732403391130 } from './migrations/1732403391130-diseases';
+import { Apartments } from '../../entities/models/apartments';
+import { Apartments1732403459282 } from './migrations/1732403459282-apartments';
+import { ApartmentsMembers } from '../../entities/models/apartmentMembers';
+import { ApartmentMembers1732403536244 } from './migrations/1732403536244-apartmentMembers';
 import { Cars } from '../../entities/models/Cars';
-import { Cars1732158255706 } from './migrations/1732158255706-cars';
+import { Cars1732403639826 } from './migrations/1732403639826-cars';
 import { HelpReceived } from '../../entities/models/HelpReceived';
-import { HelpReceived1732203326025 } from './migrations/1732203326025-helpReceived';
+import { HelpReceived1732403694500 } from './migrations/1732403694500-helpReceived';
 import { EmergencyContact } from '../../entities/models/EmergencyContact';
-import { EmergencyContact1732204501649 } from './migrations/1732204501649-emergencyContact';
+import { EmergencyContact1732403751862 } from './migrations/1732403751862-emergencyContact';
 import { Relocation } from '../../entities/models/Relocation';
-import { Relocation1732228633501 } from './migrations/1732228633501-relocation';
+import { Relocation1732403807017 } from './migrations/1732403807017-relocation';
 import { Mascots } from '../../entities/models/Mascots';
-import { Mascots1732230742176 } from './migrations/1732230742176-mascots';
+import { Mascots1732403862159 } from './migrations/1732403862159-mascots';
 import { UserApartments } from '../../entities/models/UserApartments';
-import { UserApartments1732231147902 } from './migrations/1732231147902-userApartments';
+import { UserApartments1732403914329 } from './migrations/1732403914329-userApartments';
 import { HomeProperty } from '../../entities/models/HomeProperty';
-import { HomeProperty1732231936330 } from './migrations/1732231936330-homeProperty';
+import { HomeProperty1732403963545 } from './migrations/1732403963545-homeProperty';
 import { PersonalProperty } from '../../entities/models/PersonalProperty';
-import { PersonalProperty1732232460106 } from './migrations/1732232460106-personalProperty';
+import { PersonalProperty1732404006625 } from './migrations/1732404006625-personalProperty';
 import { Damages } from '../../entities/models/Damages';
-import { Damages1732233235036 } from './migrations/1732233235036-damages';
+import { Damages1732404053433 } from './migrations/1732404053433-damages';
 import { UsersDiseases } from '../../entities/models/UsersDiseases';
-import { UsersDiseases1732233986737 } from './migrations/1732233986737-usersDiseases';
+import { UsersDiseases1732404096562 } from './migrations/1732404096562-usersDiseases';
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -42,15 +42,15 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASSWORD || "3311",
     database: process.env.DB_DATABASE || "dana_connection",
 
-    entities: [ Roles, Users, Building, Disease, Apartments, ApartmentsMembers,
+    entities: [Roles, Users, Building, Disease, Apartments, ApartmentsMembers,
         Cars, HelpReceived, EmergencyContact, Relocation, Mascots, UserApartments,
         HomeProperty, PersonalProperty, Damages, UsersDiseases
     ],
 
-    migrations: [ Role1731800867772, Users1731801109631, Building1732147504718, Disease1732157980253,
-        Apartments1732150168072, ApartmentMembers1732148044881, Cars1732158255706, HelpReceived1732203326025,
-        EmergencyContact1732204501649, Relocation1732228633501, Mascots1732230742176,UserApartments1732231147902,
-        HomeProperty1732231936330, PersonalProperty1732232460106, Damages1732233235036, UsersDiseases1732233986737
+    migrations: [Role1731800867772, Users1731801109631, Buildings1732403279446, Diseases1732403391130,
+        Apartments1732403459282, ApartmentMembers1732403536244, Cars1732403639826, HelpReceived1732403694500,
+        EmergencyContact1732403751862, Relocation1732403807017, Mascots1732403862159, UserApartments1732403914329,
+        HomeProperty1732403963545, PersonalProperty1732404006625, Damages1732404053433, UsersDiseases1732404096562
     ],
 
     synchronize: false,

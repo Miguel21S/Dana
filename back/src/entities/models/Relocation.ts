@@ -9,11 +9,11 @@ export class Relocation extends BaseEntity{
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column({ "name": "newAddress" })
-    newAddress!: string;
+    @Column({ "name": "new_address" })
+    new_address!: string;
 
-    @Column({ "name": "postalCode" })
-    postalCode!: string;
+    @Column({ "name": "postal_code" })
+    postal_code!: string;
 
     @Column({ "name": "city" })
     city!: string;
@@ -21,20 +21,20 @@ export class Relocation extends BaseEntity{
     @Column({ "name": "province" })
     province!: string;
 
-    @Column({ "name": "buildType" })
-    buildType!: string;
+    @Column({ "name": "build_type" })
+    build_type!: string;
 
-    @Column({ "name": "floorNumber" })
-    floorNumber!: number;
+    @Column({ "name": "floor_number" })
+    floor_number!: number;
     
-    @Column({ "name": "dateRelocation" })
-    dateRelocation!: Date;
+    @Column({ "name": "date_relocation" })
+    date_relocation!: Date;
 
-    @Column({ "name": "reasonRelocation" })
-    reasonRelocation!: string;
+    @Column({ "name": "reason_relocation" })
+    reason_relocation!: string;
 
-    @Column({ "name": "estimatedDuration" })
-    estimatedDuration!: string;
+    @Column({ "name": "estimated_duration" })
+    estimated_duration!: string;
 
     @Column({ "name": "user_id" })
     user_id!: number;

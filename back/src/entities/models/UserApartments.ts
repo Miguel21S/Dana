@@ -8,8 +8,14 @@ export class UserApartments extends BaseEntity{
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column({ "name": "date" })
-    date!: string;
+    @Column({"name": "relation_type"})
+    relation_type!: string;
+
+    @Column({ "name": "start_date" })
+    date!: Date;
+
+    @Column({ "name": "end_date" })
+    end_date!: Date;
 
     @Column({ "name": "user_id" })
     user_id!: number;

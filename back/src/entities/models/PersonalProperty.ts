@@ -18,6 +18,9 @@ export class PersonalProperty extends BaseEntity {
     @Column({"name": "condition"})
     condition!: number;
 
+    @Column({"name": "image_path"})
+    image_path!: string;
+
     @Column({"name": "user_id"})
     user_id!: number;
 

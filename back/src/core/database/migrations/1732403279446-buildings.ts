@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Cars1732158255706 implements MigrationInterface {
+export class Buildings1732403279446 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "cars",
+                name: "buildings",
                 columns: [
                     {
                         name: "id",
@@ -15,58 +15,57 @@ export class Cars1732158255706 implements MigrationInterface {
                         generationStrategy: "increment"
                     },
                     {
-                        name: "brand",
+                        name: "address",
                         type: "varchar",
-                        length: "50",
+                        length: "255",
                         isNullable: false
                     },
                     {
-                        name: "model",
-                        type: "varchar",
-                        length: "50",
-                        isNullable: false
-                    },
-                    {
-                        name: "year",
+                        name: "number_build",
                         type: "int",
-                        isNullable: true
+                        length: "10",
+                        isNullable: false
                     },
                     {
-                        name: "number_plate",
+                        name: "postal_code",
                         type: "varchar",
                         length: "10",
                         isNullable: false
                     },
                     {
-                        name: "color",
+                        name: "city",
                         type: "varchar",
                         length: "50",
-                        isNullable: true
-                    },
-                    {
-                        name: "value_approximate",
-                        type: "decimal",
-                        length: "10",
                         isNullable: false
                     },
                     {
-                        name: "condition",
+                        name: "province",
                         type: "varchar",
                         length: "50",
-                        isNullable: true
+                        isNullable: false
                     },
                     {
-                        name: "users_id",
+                        name: "quantity_apartment",
                         type: "int",
+                        length: "20",
                         isNullable: false
-                    }
-                ],
-                foreignKeys: [
+                    },
                     {
-                        columnNames: ["users_id"],
-                        referencedTableName: "users",
-                        referencedColumnNames: ["id"],
-                        onDelete: "CASCADE"
+                        name: "build_type",
+                        type: "varchar",
+                        length: "50",
+                        isNullable: false
+                    },
+                    {
+                        name: "floor_number",
+                        type: "int",
+                        isNullable: true
+                    },
+                    {
+                        name: "image_path",
+                        type: "varchar",
+                        length: "255",
+                        isNullable: true
                     }
                 ]
             }),
@@ -75,7 +74,7 @@ export class Cars1732158255706 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("cars");
+        await queryRunner.dropTable("buildings");
     }
 
 }

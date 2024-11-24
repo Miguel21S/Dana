@@ -17,6 +17,9 @@ export class HomeProperty extends BaseEntity {
 
     @Column({ "name": "condition" })
     condition!: string;
+    
+    @Column({ "name": "image_path" })
+    image_path!: string;
 
     @Column({ "name": "apartment_id" })
     apartment_id!: number;
