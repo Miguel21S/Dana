@@ -1,57 +1,57 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class PersonalProperty1732404006625 implements MigrationInterface {
+export class Imagens1732496562348 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "personalProperty",
+                name: "imagens",
                 columns: [
                     {
                         name: "id",
                         type: "int",
                         isPrimary: true,
                         isGenerated: true,
-                        generationStrategy: "increment"
+                        generationStrategy: "increment",
+                    },
+                    {
+                        name: "entity_type",
+                        type: "varchar",
+                        length: "255",
+                        isNullable: false,
+                    },
+                    {
+                        name: "entity_id",
+                        type: "int",
+                        isNullable: false,
+                    },
+                    {
+                        name: "image_url",
+                        type: "varchar",
+                        length: "255",
+                        isNullable: false,
                     },
                     {
                         name: "description",
                         type: "varchar",
                         length: "255",
-                        isNullable: false
-                    },
-                    {
-                        name: "value_approximate",
-                        type: "decimal",
-                        isNullable: false,
-                    },
-                    {
-                        name: "condition",
-                        type: "varchar",
-                        length: "255",
                         isNullable: true,
                     },
                     {
-                        name: "user_id",
-                        type: "int",
+                        name: "upload_date",
+                        type: "timestamp",
+                        default: "CURRENT_TIMESTAMP",
                         isNullable: false,
-                    }
+                    },
                 ],
-                foreignKeys: [
-                    {
-                        columnNames: ["user_id"],
-                        referencedTableName: "users",
-                        referencedColumnNames: ["id"],
-                        onDelete: "CASCADE"
-                    }
-                ]
             }),
             true
         );
+
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("personalProperty");
+        await queryRunner.dropTable("imagens");
     }
 
 }

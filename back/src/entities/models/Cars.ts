@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Users } from "./users";
+import { Users } from "./Users";
 
 
 @Entity("cars")
@@ -31,9 +31,6 @@ export class Cars extends BaseEntity{
 
     @Column({"name": "user_id"})
     user_id!: number;
-
-    @Column({"name": "image_path"})
-    image_path!: string;
 
     @ManyToOne(() => Users, (user) => user.cars)
     @JoinColumn({"name": "user_id"})

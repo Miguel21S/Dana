@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Roles } from "./roles";
+import { Roles } from "./Roles";
 import { Cars } from "./Cars";
 import { HelpReceived } from "./HelpReceived";
 import { EmergencyContact } from "./EmergencyContact";
@@ -41,9 +41,6 @@ export class Users extends BaseEntity{
     
     @Column({'name': 'password'})
     password!: string;
-    
-    @Column({'name': 'image_path'})
-    image_path!: string;
     
     @Column({'name': 'role_id'})
     role_id!: number;

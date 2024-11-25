@@ -44,12 +44,6 @@ export class Mascots1732403862159 implements MigrationInterface {
                         isNullable: false
                     },
                     {
-                        name: "image_path",
-                        type: "varchar",
-                        length: "255",
-                        isNullable: true
-                    },
-                    {
                         name: "user_id",
                         type: "int",
                         isNullable: false,

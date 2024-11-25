@@ -32,9 +32,6 @@ export class Building extends BaseEntity{
     @Column({ "name": "floor_number" })
     floor_number!: number;
 
-    @Column({"name": "image_path"})
-    image_path!: string;
-
     @OneToMany(() => Apartments, (apartment) => apartment.buildings)
     apartments!: Apartments[];
 

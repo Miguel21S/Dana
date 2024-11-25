@@ -37,12 +37,6 @@ export class Apartments1732403459282 implements MigrationInterface {
                         isNullable: true
                     },
                     {
-                        name: "image_path",
-                        type: "varchar",
-                        length: "255",
-                        isNullable: true
-                    },
-                    {
                         name: "building_id",
                         type: "int",
                         isNullable: false,

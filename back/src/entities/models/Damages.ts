@@ -22,9 +22,6 @@ export class Damages extends BaseEntity{
 
     @Column({ "name": "description" })
     description!: string;
-    
-    @Column({ "name": "image_path" })
-    image_path!: string;
 
     @Column({"name": "building_id"})
     building_id!: number;

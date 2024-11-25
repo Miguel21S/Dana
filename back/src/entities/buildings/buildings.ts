@@ -65,7 +65,6 @@ const getBuildings = async (req: Request, res: Response) => {
                 quantity_apartment: true,
                 build_type: true,
                 floor_number: true,
-                image_path: true,
             }
         })
 

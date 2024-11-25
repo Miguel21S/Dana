@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Building } from "./Building";
-import { ApartmentsMembers } from "./apartmentMembers";
+import { ApartmentsMembers } from "./ApartmentMembers";
 import { HelpReceived } from "./HelpReceived";
 import { Relocation } from "./Relocation";
 import { UserApartments } from "./UserApartments";
@@ -23,9 +23,6 @@ export class Apartments {
 
     @Column({"name": "condition"})
     condition!: string;
-
-    @Column({"name": "image_path"})
-    image_path!: string;
 
     @Column({"name": "building_id"})
     building_id!: number;

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import Jwt from "jsonwebtoken";
-import { Users } from "../entities/models/users";
+import { Users } from "../entities/models/Users";
 
 ///////////////////////////// METHOD REGISTER //////////////////////////
 const register = async (req: Request, res: Response) => {

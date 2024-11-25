@@ -30,13 +30,7 @@ export class HomeProperty1732403963545 implements MigrationInterface {
                         type: "varchar",
                         length: "255",
                         isNullable: true
-                    },
-                    {
-                        name: "image_path",
-                        type: "varchar",
-                        length: "255",
-                        isNullable: true
-                    },
+                    },                    
                     {
                         name: "apartment_id",
                         type: "int",

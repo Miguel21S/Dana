@@ -1,9 +1,9 @@
 import 'dotenv/config';
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { Roles } from '../../entities/models/roles';
+
 import { Role1731800867772 } from './migrations/1731800867772-role';
-import { Users } from '../../entities/models/users';
+import { Users } from '../../entities/models/Users';
 import { Users1731801109631 } from './migrations/1731801109631-users';
 import { Building } from '../../entities/models/Building';
 import { Buildings1732403279446 } from './migrations/1732403279446-buildings';
@@ -11,7 +11,7 @@ import { Disease } from '../../entities/models/Disease';
 import { Diseases1732403391130 } from './migrations/1732403391130-diseases';
 import { Apartments } from '../../entities/models/apartments';
 import { Apartments1732403459282 } from './migrations/1732403459282-apartments';
-import { ApartmentsMembers } from '../../entities/models/apartmentMembers';
+import { ApartmentsMembers } from '../../entities/models/ApartmentMembers';
 import { ApartmentMembers1732403536244 } from './migrations/1732403536244-apartmentMembers';
 import { Cars } from '../../entities/models/Cars';
 import { Cars1732403639826 } from './migrations/1732403639826-cars';
@@ -33,6 +33,9 @@ import { Damages } from '../../entities/models/Damages';
 import { Damages1732404053433 } from './migrations/1732404053433-damages';
 import { UsersDiseases } from '../../entities/models/UsersDiseases';
 import { UsersDiseases1732404096562 } from './migrations/1732404096562-usersDiseases';
+import { Imagens } from '../../entities/models/Imagens';
+import { Imagens1732496562348 } from './migrations/1732496562348-imagens';
+import { Roles } from '../../entities/models/Roles';
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -44,13 +47,14 @@ export const AppDataSource = new DataSource({
 
     entities: [Roles, Users, Building, Disease, Apartments, ApartmentsMembers,
         Cars, HelpReceived, EmergencyContact, Relocation, Mascots, UserApartments,
-        HomeProperty, PersonalProperty, Damages, UsersDiseases
+        HomeProperty, PersonalProperty, Damages, UsersDiseases, Imagens
     ],
 
     migrations: [Role1731800867772, Users1731801109631, Buildings1732403279446, Diseases1732403391130,
         Apartments1732403459282, ApartmentMembers1732403536244, Cars1732403639826, HelpReceived1732403694500,
         EmergencyContact1732403751862, Relocation1732403807017, Mascots1732403862159, UserApartments1732403914329,
-        HomeProperty1732403963545, PersonalProperty1732404006625, Damages1732404053433, UsersDiseases1732404096562
+        HomeProperty1732403963545, PersonalProperty1732404006625, Damages1732404053433, UsersDiseases1732404096562,
+        Imagens1732496562348
     ],
 
     synchronize: false,

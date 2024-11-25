@@ -56,12 +56,6 @@ export class Cars1732403639826 implements MigrationInterface {
                         isNullable: true
                     },
                     {
-                        name: "image_path",
-                        type: "varchar",
-                        length: "255",
-                        isNullable: true
-                    },
-                    {
                         name: "user_id",
                         type: "int",
                         isNullable: false

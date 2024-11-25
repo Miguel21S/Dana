@@ -39,12 +39,6 @@ export class Damages1732404053433 implements MigrationInterface {
                         isNullable: true
                     },
                     {
-                        name: "image_path",
-                        type: "varchar",
-                        length: "255",
-                        isNullable: true
-                    },
-                    {
                         name: "building_id",
                         type: "int",
                         isNullable: false,

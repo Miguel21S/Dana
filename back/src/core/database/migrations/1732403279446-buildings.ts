@@ -61,12 +61,6 @@ export class Buildings1732403279446 implements MigrationInterface {
                         type: "int",
                         isNullable: true
                     },
-                    {
-                        name: "image_path",
-                        type: "varchar",
-                        length: "255",
-                        isNullable: true
-                    }
                 ]
             }),
             true

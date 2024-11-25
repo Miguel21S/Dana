@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Users } from "./users";
+import { Users } from "./Users";
 import { Apartments } from "./apartments";
 
 @Entity("userApartments")
